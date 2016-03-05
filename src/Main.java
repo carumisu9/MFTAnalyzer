@@ -8,9 +8,11 @@ import java.util.RandomAccess;
 public class Main {
   public static void main(String[] args) throws IOException {
 
+    long start = System.currentTimeMillis();
+
     MFT mft = null;
     try{
-      mft = new MFT(new RandomAccessFile("res/vss001-$MFT", "r"));
+      mft = new MFT(new RandomAccessFile(args[0], "r"));
     } catch (Exception e){
       e.printStackTrace();
     }
@@ -22,7 +24,7 @@ public class Main {
 
 //    print mft.csv
     CSVPrinter printer = new CSVPrinter();
-    printer.print(mft);
+    printer.print(mft, args[1]);
 
     try{
       if(mft.mftFile != null)
@@ -31,6 +33,8 @@ public class Main {
       e.printStackTrace();
     }
 
+    long end = System.currentTimeMillis();
+    System.out.println((end - start)  + "ms");
 
   }
 }

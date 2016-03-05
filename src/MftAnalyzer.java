@@ -148,9 +148,9 @@ public class MftAnalyzer extends Analyzer {
   public Record decodeStandardAttr(Record record, byte[] data){
 
     record.createdTime = byte2dataString(Arrays.copyOfRange(data, 0, 8));
-    record.modifiedTime = HexBin.encode(Arrays.copyOfRange(data, 8, 16));
-    record.entryModifiedTime = HexBin.encode(Arrays.copyOfRange(data, 16, 24));
-    record.accessedTime = HexBin.encode(Arrays.copyOfRange(data, 24, 32));
+    record.modifiedTime = byte2dataString(Arrays.copyOfRange(data, 8, 16));
+    record.entryModifiedTime = byte2dataString(Arrays.copyOfRange(data, 16, 24));
+    record.accessedTime = byte2dataString(Arrays.copyOfRange(data, 24, 32));
 
     return record;
   }
@@ -186,12 +186,12 @@ public class MftAnalyzer extends Analyzer {
     }
 //    Long dateTime = Long.valueOf(HexBin.encode(tmp),16)/10000000;
 //    debugPrint(dateTime);
-    Calendar calendar = Calendar.getInstance();
-    calendar.setTimeInMillis(145080004);
-    Date date = calendar.getTime();
-    debugPrint(calendar.getTimeInMillis());
+//    Calendar calendar = Calendar.getInstance();
+//    calendar.setTimeInMillis(145080004);
+//    Date date = calendar.getTime();
+//    debugPrint(calendar.getTimeInMillis());
 
-    return date.toString();
+    return HexBin.encode(tmp);
   }
 
 }

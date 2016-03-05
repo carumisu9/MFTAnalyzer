@@ -19,33 +19,36 @@ public class CSVPrinter extends Printer {
 
   }
 
-  public void print(MFT mft) throws IOException {
+  public void print(MFT mft, String out) throws IOException {
 
     PrintWriter output =
         new PrintWriter(
             new BufferedWriter(
-                new FileWriter("res/output.csv", false
+                new FileWriter(out, false
                 )
             )
         );
 
-//    for(int i : mft.records.keySet()){
+    for(int i : mft.records.keySet()){
 
-      Record record = mft.records.get(0);
+      Record record = mft.records.get(i);
 
       List<String> list = new ArrayList<>();
-      list.add(String.valueOf(record.recordNum));
-      list.add(String.valueOf(record.alive));
-      list.add(String.valueOf(record.filename));
-      list.add(record.createdTime);
-      list.add(record.modifiedTime);
-      list.add(record.entryModifiedTime);
-      list.add(record.accessedTime);
-      list.add("\n");
+      try {
+        list.add(String.valueOf(record.recordNum));
+        list.add(String.valueOf(record.alive));
+        list.add(String.valueOf(record.filename));
+        list.add(record.createdTime);
+        list.add(record.modifiedTime);
+        list.add(record.entryModifiedTime);
+        list.add(record.accessedTime);
+        list.add("\n");
 
-      output.print(String.join(",", list));
+        output.print(String.join(",", list));
+      }catch (Exception e){
 
-//    }
+      }
+    }
 
     output.close();
 
