@@ -14,9 +14,6 @@ import java.util.HashMap;
 import java.util.Objects;
 import java.util.concurrent.SynchronousQueue;
 
-/**
- * Created by yuto on 2016/03/01.
- */
 public class MftAnalyzer extends Analyzer {
 
   private MFT mft;

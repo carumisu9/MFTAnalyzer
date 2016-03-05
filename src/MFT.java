@@ -7,9 +7,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-/**
- * Created by yuto on 2016/03/01.
- */
 public class MFT {
 
   public RandomAccessFile mftFile;

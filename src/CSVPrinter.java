@@ -7,9 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
 
-/**
- * Created by yuto on 2016/03/01.
- */
 public class CSVPrinter extends Printer {
 
   private String fileName;

@@ -1,6 +1,3 @@
-/**
- * Created by yuto on 2016/03/01.
- */
 public class Record {
 
   // common header

@@ -2,9 +2,6 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.RandomAccess;
 
-/**
- * Created by yuto on 2016/03/01.
- */
 public class Main {
   public static void main(String[] args) throws IOException {
 
