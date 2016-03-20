@@ -5,8 +5,6 @@ import java.util.RandomAccess;
 public class Main {
   public static void main(String[] args) throws IOException {
 
-    long start = System.currentTimeMillis();
-
     MFT mft = null;
     try{
       mft = new MFT(new RandomAccessFile(args[0], "r"));
@@ -29,9 +27,6 @@ public class Main {
     } catch (Exception e){
       e.printStackTrace();
     }
-
-    long end = System.currentTimeMillis();
-    System.out.println((end - start)  + "ms");
 
   }
 }
